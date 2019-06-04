@@ -44,7 +44,8 @@ public class AddTimeStampAdviceAdapter extends AdviceAdapter {
     protected void onMethodEnter() {
         super.onMethodEnter();
         if (timeStampHandleClass != null && timeStampHandleMethod != null) {
-            mv.visitLdcInsn(mClassName + "->" +methodDesc + ": method start ");
+            String start = mClassName + "->" +methodDesc + ": method start ";
+            mv.visitLdcInsn(start);
             mv.visitMethodInsn(INVOKESTATIC, timeStampHandleClass,
                     timeStampHandleMethod, "(Ljava/lang/String;)V", false);
         }
@@ -54,7 +55,9 @@ public class AddTimeStampAdviceAdapter extends AdviceAdapter {
     protected void onMethodExit(int opcode) {
         super.onMethodExit(opcode);
         if (timeStampHandleClass != null && timeStampHandleMethod != null) {
-            mv.visitLdcInsn(mClassName + "->" +methodDesc + ": method end ");
+            String end = mClassName + "->" +methodDesc + ": method end ";
+
+            mv.visitLdcInsn(end);
             mv.visitMethodInsn(INVOKESTATIC, timeStampHandleClass,
                     timeStampHandleMethod, "(Ljava/lang/String;)V", false);
         }
