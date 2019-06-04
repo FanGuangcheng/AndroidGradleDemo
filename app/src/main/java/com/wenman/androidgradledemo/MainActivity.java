@@ -35,4 +35,11 @@ public class MainActivity extends AppCompatActivity {
             Log.d("MainActivity", "str length is empty~!");
         }
     }
+
+    private void testAddTimeStamp() {
+
+        Log.d("MainActivity", "testAddTimeStamp   ");
+
+
+    }
 }
