@@ -28,18 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void testMakeException() {
-        String str = null;
+        String str = "";
         if (str.length() != 0) {
             Log.d("MainActivity", "str length is :" + str.length());
         } else {
             Log.d("MainActivity", "str length is empty~!");
         }
-    }
-
-    private void testAddTimeStamp() {
-
-        Log.d("MainActivity", "testAddTimeStamp   ");
-
-
     }
 }
